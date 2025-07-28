@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Hassan - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .languages {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .language {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .featured-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .work-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .work-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .work-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .work-company {
+            font-size: 1.1rem;
+            color: #e74c3c;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .work-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #3498db;
+        }
+
+        .skill-category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8rem;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .software-item {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .software-item:hover {
+            transform: scale(1.05);
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .university {
+            color: #27ae60;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .accomplishments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .accomplishment-item {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .accomplishment-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .accomplishment-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1 class="name">Mohamed Hassan</h1>
+                <p class="title">3D Artist | High-End Retoucher | Filmmaker | Photographer | AI Artist</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Age: 22 Years | Cairo, Egypt</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>+201128939061</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <span>mohamedretoucherxx@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mohamed-hassan-4b89a6339" class="social-link">LinkedIn</a>
+                    <a href="https://www.behance.net/mohassanx" class="social-link">Behance</a>
+                    <a href="https://instagram.com/mo.hassanx" class="social-link">Instagram</a>
+                    <a href="https://www.instagram.com/mo.artx" class="social-link">Instagram (Art)</a>
+                    <a href="https://www.facebook.com/xmohassanx" class="social-link">Facebook</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages">
+                    <div class="language">Arabic: Native</div>
+                    <div class="language">English: Intermediate</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Summary</h2>
+                <div class="summary">
+                    Versatile visual artist with 5+ years of experience in high-end photo retouching and 3D modeling. Expanded expertise to include filmmaking, photography, videography, and AI-generated media. Proven track record working with leading companies and production teams. Experienced trainer and lecturer in advanced visual techniques. Committed to innovation and continuous learning in emerging digital media technologies.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="featured-projects">
+                    <div class="project-card">
+                        <h3 class="project-title">AI Video for SIPES</h3>
+                        <p class="project-description">Created viral AI-generated video content for SIPES global paint company that achieved 1 million views. Demonstrated innovative use of AI technology in commercial content creation, combining traditional video production with cutting-edge AI media generation.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">"Masar Ejbary" TV Series</h3>
+                        <p class="project-description">Contributed to post-production workflow for major television production. Applied advanced retouching techniques for broadcast-quality content and delivered professional-grade visual enhancement for television broadcast.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="work-item">
+                    <h3 class="work-title">Digital Artist</h3>
+                    <p class="work-company">Target Agency | Cairo, Egypt</p>
+                    <div class="work-description">
+                        • Created compelling visual content combining traditional filmmaking with AI-generated media<br>
+                        • Delivered comprehensive visual solutions including photography, retouching, filmmaking, and AI artistry<br>
+                        • Collaborated on multi-platform campaigns and commercial projects
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">Photographer & Retoucher & Filmmaker</h3>
+                    <p class="work-company">SIPES (Global Paint Company) | Cairo, Egypt</p>
+                    <div class="work-description">
+                        • Specialized in commercial photography and advanced photo retouching<br>
+                        • Created viral AI video content that achieved 1 million views<br>
+                        • Integrated filmmaking techniques to create dynamic visual content<br>
+                        • Maintained high-quality standards across photography and post-production workflows
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">Photographer & Retoucher</h3>
+                    <p class="work-company">Aldora | Cairo, Egypt</p>
+                    <div class="work-description">
+                        • Executed high-end photography sessions and professional retouching services<br>
+                        • Delivered polished visual content for commercial and artistic projects
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">Photographer & Retoucher</h3>
+                    <p class="work-company">T Break | Cairo, Egypt</p>
+                    <div class="work-description">
+                        • Provided comprehensive photography and retouching services<br>
+                        • Maintained consistent quality and client satisfaction across projects
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">Retoucher</h3>
+                    <p class="work-company">"Masar Ejbary" TV Series</p>
+                    <div class="work-description">
+                        • Contributed to post-production workflow for television series<br>
+                        • Applied advanced retouching techniques for broadcast-quality content
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">VFX Artist</h3>
+                    <p class="work-company">Freelance | Cairo, Egypt (Remote) | 2023 - Current</p>
+                    <div class="work-description">
+                        • Delivered realistic 3D product animations integrated with live-action footage<br>
+                        • Specialized in creating high-quality 3D models and visual effects using Blender and After Effects<br>
+                        • Created engaging promotional content for various clients
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">3D Artist</h3>
+                    <p class="work-company">Freelance | Cairo, Egypt (Remote) | 2023 - Current</p>
+                    <div class="work-description">
+                        • Designed high-quality 3D models for products and jewelry using Blender<br>
+                        • Delivered intricate and realistic designs tailored to client specifications<br>
+                        • Collaborated with multiple photographers as a retoucher on various projects
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <h3 class="work-title">Photo Retoucher</h3>
+                    <p class="work-company">Freelance | Cairo, Egypt (Remote) | 2019 - Current</p>
+                    <div class="work-description">
+                        • Delivered high-end photo retouching services with focus on color grading, beauty retouching, and compositing<br>
+                        • Mentored aspiring editors, teaching advanced techniques<br>
+                        • Maintained 95% client satisfaction rate<br>
+                        • Enhanced image quality using advanced retouching techniques and color correction methods
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Photography & Filmmaking</h3>
+                        <ul class="skill-list">
+                            <li>Commercial Photography</li>
+                            <li>Portrait & Product Photography</li>
+                            <li>Filmmaking & Pre-production</li>
+                            <li>Videography & Cinematography</li>
+                            <li>Visual Storytelling</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Photo Retouching</h3>
+                        <ul class="skill-list">
+                            <li>High-end Retouching</li>
+                            <li>Beauty & Fashion Retouching</li>
+                            <li>Color Grading</li>
+                            <li>Commercial Editing</li>
+                            <li>Compositing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">3D & VFX</h3>
+                        <ul class="skill-list">
+                            <li>3D Product Modeling</li>
+                            <li>Jewelry Design</li>
+                            <li>VFX & Visual Effects</li>
+                            <li>Photorealistic Rendering</li>
+                            <li>Camera Tracking</li>
+                            <li>Texturing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Video Production</h3>
+                        <ul class="skill-list">
+                            <li>Video Editing</li>
+                            <li>Color Grading</li>
+                            <li>Post-production</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">AI & Emerging Tech</h3>
+                        <ul class="skill-list">
+                            <li>AI-Generated Media</li>
+                            <li>Generative Art</li>
+                            <li>Technology Integration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Other Skills</h3>
+                        <ul class="skill-list">
+                            <li>Advanced Research</li>
+                            <li>Problem-solving</li>
+                            <li>Training & Teaching</li>
+                            <li>Technical Knowledge</li>
+                            <li>Project Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="skill-category-title" style="margin-top: 30px;">Software</h3>
+                <div class="software-grid">
+                    <div class="software-item">Adobe Photoshop</div>
+                    <div class="software-item">Blender</div>
+                    <div class="software-item">MatrixGold</div>
+                    <div class="software-item">After Effects</div>
+                    <div class="software-item">Lightroom</div>
+                    <div class="software-item">Capture One</div>
+                    <div class="software-item">Premiere Pro</div>
+                    <div class="software-item">DaVinci Resolve</div>
+                    <div class="software-item">KeyShot</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3 class="degree">Bachelor of Arts: Department of Psychology</h3>
+                    <p class="university">Helwan University - Cairo, Egypt</p>
+                    <p>2022-2026 (In Progress)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Accomplishments</h2>
+                <div class="accomplishments-grid">
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">500+ Projects</div>
+                        <div>Completed in photo editing and retouching</div>
+                    </div>
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">Viral Success</div>
+                        <div>Created AI video for SIPES that achieved 1 million views</div>
+                    </div>
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">Television Production</div>
+                        <div>Contributed to "Masar Ejbary" TV series post-production</div>
+                    </div>
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">Commercial Success</div>
+                        <div>
+Worked with leading companies including Target Agency, SIPES, Aldora, and T Break,
+in addition to collaborating with numerous professional photographers and contributing to a wide range of freelance projects across various industries.
+
+</div>
+                    </div>
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">Training Impact</div>
+                        <div>Conducted multiple training sessions for aspiring designers and editors</div>
+                    </div>
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">Multi-disciplinary Expertise</div>
+                        <div>Successfully integrated photography, filmmaking, and AI technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
